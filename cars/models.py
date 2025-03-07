@@ -8,3 +8,6 @@ class Car(models.Model):
     factory_year = models.IntegerField( blank=True, null=True)
     model_year = models.IntegerField( blank=True, null=True)
     value = models.FloatField( blank=True, null=True )
+
+    def __str__( self ):
+        return f'{self.model} - {self.brand}'

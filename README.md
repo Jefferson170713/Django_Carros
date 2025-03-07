@@ -4,6 +4,9 @@
 - 037 Configurando o Admin do nosso model Car.
     - Primeiro criamos a classe do nosso modelo em models.py que seriam os campos da nossa tabela.
     - Segundo registramos na admin.py do nosso app cars a CarAdmin e registramos para o sistema enxergar.
+- 038 - Configurações adicionais do nosso projeto.
+    - Ajustando o models.py na class para trazer o nome dos objetos que foram adicionados.
+    - Subscrevendo a função def __str__(self):
 
 ### Comandos.
 - python -m venv venv - Cria a máquina virtual.
