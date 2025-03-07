@@ -11,3 +11,4 @@
 - python manage.py startapp cars - Inicia nosso app ou modolo app, foi atribuido o nome cars, mas poderia ser qualquer outro.
 - python manage.py makemigrations - para criar a atualizar nossas tabelas.
 - python manage.py migrate - executa o comando de criação das tabelas.
+- python manege.py createsuperuser - Criar o super usuário do sistema, user root.
