@@ -1,5 +1,9 @@
 # Django_Carros
 ## Repositório do Projeto de estudos sobre Carros.
+### 07 - Django e Banco de Dados (models e admin)
+- 037 Configurando o Admin do nosso model Car.
+    - Primeiro criamos a classe do nosso modelo em models.py que seriam os campos da nossa tabela.
+    - Segundo registramos na admin.py do nosso app cars a CarAdmin e registramos para o sistema enxergar.
 
 ### Comandos.
 - python -m venv venv - Cria a máquina virtual.
