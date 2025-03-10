@@ -2,11 +2,11 @@
 ## Repositório do Projeto de estudos sobre Carros.
 ### 07 - Django e Banco de Dados (models e admin)
 - 037 __Configurando o Admin do nosso model Car__.
-    - Primeiro criamos a classe do nosso modelo em models.py que seriam os campos da nossa tabela.
-    - Segundo registramos na admin.py do nosso app cars a CarAdmin e registramos para o sistema enxergar.
+    - Primeiro criamos a classe do nosso modelo em __models.py__ que seriam os campos da nossa tabela.
+    - Segundo registramos na __admin.py__ do nosso app cars a __CarAdmin__ e registramos para o sistema enxergar.
 - 038 - __Configurações adicionais do nosso projeto__.
-    - Ajustando o models.py na class para trazer o nome dos objetos que foram adicionados.
-    - Subscrevendo a função def __str__(self):
+    - Ajustando o __models.py__ na class para trazer o nome dos objetos que foram adicionados.
+    - Subscrevendo a função `def __str__(self)`:
 - 039 - __Criando modelo e admin de marcas (ForeignKey)__. 
     - Criando a nova classe Brand para ser a chave estrangeira em Car.
     - Colocando o models.ForeignKey( Brand, on_delete=models.PROTECT, related_name='car_brand' ).
@@ -24,7 +24,7 @@
 - __pip install django__ - Com a máquina virtual aberta, instalando django.
 - __django-admin startproject app .__ - Inicializando a aplicação, será app, mas pode ser qualquer nome.
 - __django-admin --version__ - Para olhar qual a versão do Django.
-- __python manage.py runserver__ - Para inicar a aplicação no servidor web ou navegador.
+- __python [manage.py](http://_vscodecontentref_/1) runserver__ - Para inicar a aplicação no servidor web ou navegador.
 - __python manage.py startapp cars__ - Inicia nosso app ou modolo app, foi atribuido o nome cars, mas poderia ser qualquer outro.
 - __python manage.py makemigrations__ - para criar a atualizar nossas tabelas.
 - __python manage.py migrate__ - executa o comando de criação das tabelas.
