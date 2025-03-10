@@ -9,7 +9,7 @@
     - Subscrevendo a função `def __str__(self)`:
 - __039 - Criando modelo e admin de marcas (ForeignKey)__. 
     - Criando a nova classe Brand para ser a chave estrangeira em Car.
-    - Colocando o __models.ForeignKey( Brand, on_delete=models.PROTECT, related_name='car_brand' )__.
+    - Colocando o `models.ForeignKey( Brand, on_delete=models.PROTECT, related_name='car_brand' )`.
     - Brand: Para adicionar a classe como chave estrangeira.
     - on_delete: Com PROTECT serve para evitar a exclusão em cascata se a marca for removida e ainda tiver dados no banco.
 - __040 - Armazenando imagens dos carros__.
