@@ -3,6 +3,12 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# para não baixar os arquivos em jpg
+*.jpg
+*.webp
+*.jpeg
+*.png
+*.jpg
 # C extensions
 *.so
 

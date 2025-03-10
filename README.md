@@ -12,6 +12,12 @@
     - Colocando o models.ForeignKey( Brand, on_delete=models.PROTECT, related_name='car_brand' ).
     - Brand: Para adicionar a classe como chave estrangeira.
     - on_delete: Com PROTECT serve para evitar a exclusão em cascata se a marca for removida e ainda tiver dados no banco.
+- 040 - Armazenando imagens dos carros.
+    - Adição da coluna placa e foto no nosso modelo. Onde foto é ImageField e uoload_to na pasta cars e que ficará dentro de media/.
+    - Depois adicionamos o 'brand__name' para a pesquisar em search_fields de pesquisa em admin.py para não dar erro.
+    - Configuramos MEDDIA_ROOT e MEDIA_URL, as pastas padrão para armazenamento de arquivos do nosso modelo. Lembrando de importar a biblioteca __os__.
+    - Em urls.py colocamos from django.conf import settings, from django.conf.urls.static import static para as pastas onde iremos armazenar os arquivos funcionar corretamente.
+    - Por fim, adicionar no urlpatterns as duas pastas.
 ### Comandos.
 - python -m venv venv - Cria a máquina virtual.
 - venv/Scripts/activate - Abre a máquina virtual para uso da aplicação.
