@@ -18,7 +18,7 @@
     - Configuramos `MEDDIA_ROOT` e `MEDIA_URL`, as pastas padrão para armazenamento de arquivos do nosso modelo. Lembrando de importar a biblioteca __os__.
     - Em `urls.py` colocamos `from django.conf import settings`, `from django.conf.urls.static import static` para as pastas onde iremos armazenar os arquivos funcionar corretamente.
     - Por fim, adicionar no __urlpatterns__ as duas pastas.
-__045 - Retornando Templates para o usuário__ - Vamos aprender a usar arquivos css e js.
+- __045 - Retornando Templates para o usuário__ - Vamos aprender a usar arquivos css e js.
     - Primeiro no __settings.py__ temos que adicionar `STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]`.
     - Por conveção, sempre que criarmos uma pasta para uso é padrão colocar o nome da nossa aplicação `cars`.
     - Após isso, criaremos __2 pastas statics__
