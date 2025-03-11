@@ -18,6 +18,30 @@
     - Configuramos `MEDDIA_ROOT` e `MEDIA_URL`, as pastas padrão para armazenamento de arquivos do nosso modelo. Lembrando de importar a biblioteca __os__.
     - Em `urls.py` colocamos `from django.conf import settings`, `from django.conf.urls.static import static` para as pastas onde iremos armazenar os arquivos funcionar corretamente.
     - Por fim, adicionar no __urlpatterns__ as duas pastas.
+__045 - Retornando Templates para o usuário__ - Vamos aprender a usar arquivos css e js.
+    - Primeiro no __settings.py__ temos que adicionar `STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]`.
+    - Por conveção, sempre que criarmos uma pasta para uso é padrão colocar o nome da nossa aplicação `cars`.
+    - Após isso, criaremos __2 pastas statics__
+        - 1°: Dentro da aplicação normal.
+        - 2°: Uma dentro de Cars, com ela criar as pastas de arquivos css e js para usar na aplicação.
+    - Criar uma pasta __templates__ dentro de `cars`
+    ```plaintext
+    Django_Carros/
+    ├── cars/
+    │   ├── static/
+    │   │   ├── cars/
+    │   │   │   ├── css/
+    │   │   │   │   └── css.css
+    │   ├── templates/
+    │   │   ├── cars/
+    │   │   │   └── cars_index.html
+    │   ├── models.py
+    │   ├── views.py
+    │   ├── ...
+    ├── static/
+    ├── manage.py
+    ├── ...
+    ```
 ### Comandos.
 - __python -m venv venv__ - Cria a máquina virtual.
 - __venv/Scripts/activate__ - Abre a máquina virtual para uso da aplicação.
