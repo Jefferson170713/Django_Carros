@@ -42,6 +42,18 @@
     ├── manage.py
     ├── ...
     ```
+- __046 - Linguagem de Templates do Django__ - Amostra de como passar os parâmetros simples do banco para a página que desejamos passar.
+    - Criamos também no arquivo de `views.py` do nosso projeto o usso da Biblioteca `import locale`.
+    - Função para retornar valores inteiros (int).
+        - ```plaintext
+            def format_int(value):
+                return locale.format_string('%.f', value, grouping=True)
+        ```
+    - Função para retornar valores do tipo ponto flutuante(float).
+        - ```plaintext
+            def format_float(value):
+                return locale.format_string('%.2f', value, grouping=True)
+        ```
 ### Comandos.
 - __python -m venv venv__ - Cria a máquina virtual.
 - __venv/Scripts/activate__ - Abre a máquina virtual para uso da aplicação.
