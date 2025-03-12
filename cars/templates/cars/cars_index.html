@@ -10,10 +10,20 @@
 <body>
     <h1>Testando meus carros.</h1>
     <div class="item">
+        {% block content %}
+            <h2 class="titulo"><strong>{{ cars.model }}</strong></h2>
+            <p class="preco">R$ {{ cars.value }}</p>
+            <p class="text"><strong>ID</strong> : {{ cars.id }}</p>
+            <p class="text">{{ cars.description }}</p>
+            <a href="" class="botao"><strong>Comprar</strong></a>
+        {% endblock content %}
+    </div>
+    <div class="item">
         <h2 class="titulo"><strong>Maverick</strong></h2>
         <p class="preco">R$ 199.000,00</p>
+        <p class="text"><strong>ID</strong> : 117</p>
         <p class="text">Carro Esportivo - Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam adipisci minus magni saepe, corporis temporibus quam alias esse itaque architecto corrupti, quisquam accusamus quis, deleniti iusto modi nam animi error.</p>
-        <a href="" class="botao"><strong>Compra</strong></a>
+        <a href="" class="botao"><strong>Comprar</strong></a>
     </div>
 
 </body>
