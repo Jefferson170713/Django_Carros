@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 import locale
+from cars.models import Car
 
 # Configura a localidade para o formato brasileiro
 locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
@@ -13,10 +14,13 @@ def format_int(value):
 
 # Create your views here.
 def cars_views(request):
-    car = {
-        'model': 'Maverick',
-        'id': format_int(1579),
-        'description': 'Carro Esportivo - Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
-        'value': format_float(19854758.89),
-    }
-    return render(request, 'cars/cars_index.html', {'cars': car})
+    cars = Car.objects.all()
+    # formatando valores inteiros
+    for car in cars:
+        car.value = format_float(car.value)
+    
+    return render(
+        request, 
+        'cars/cars_index.html', 
+        {'cars': cars}
+    )

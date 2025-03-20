@@ -1,5 +1,6 @@
 body {
     font-family: Arial, sans-serif;
+    /* background-color: yellow; */
 }
 .titulo {
     margin: 0px;
@@ -16,7 +17,7 @@ body {
 
 .botao {
     display: inline-block;
-    padding: 20px 40px 20px 40px;
+    padding: 10px 20px 10px 20px;
     text-decoration: none;
     font-size: 22px;
     color: white;
@@ -31,5 +32,9 @@ body {
 
 .text {
     font-size: 20px;
+    color: rgba(0, 0, 0, 0.637);
+}
+.text-plate {
+    font-size: 30px;
     color: rgba(0, 0, 0, 0.637);
 }

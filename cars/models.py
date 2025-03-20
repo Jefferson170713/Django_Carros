@@ -6,7 +6,7 @@ class Brand(models.Model):
     name = models.CharField( max_length=150 )
 
     def __str__(self):
-        return f'{self.id} - {self.name}'
+        return self.name
 # criando a 1° tabela Car
 class Car(models.Model):
     id = models.AutoField( primary_key=True )
