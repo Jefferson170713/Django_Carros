@@ -69,8 +69,8 @@
 - __050 - Filtrando carros com os parâmetros do usuário__ - Filtrando com um campo de busca na página inicial para buscar os carros que queremos.
     - Primeeiro alteramos a `views.py` para passar o contexto e com isso passar todos os parâmetros necessários, com a variável __context__.
         - ```plaintext
-            context = {'cars': cars, 'search': search,}
-        ```
+            context = {'cars': cars, 'search': search,}```
+            
     - Com a variável __context__ sendo passada para a página, podemos agora acessar diretamente. Exemplo abaixo do uso direto.
         - ```plaintext
             <input type="search" name="search" class="search_input" placeholder="Pesquisar" value="{{ search }}">
