@@ -55,10 +55,10 @@
             def format_float(value):
                 return locale.format_string('%.2f', value, grouping=True)
             ```
-    __047 - Buscando carros no Banco de Dados com Django ORM__ - Mostrando como passar os dados que ADM insere no banco e como isso seria mostrado aos clientes.
-        - Criamos uma página simples de HTML assim como um CSS somente para visualizar os dados.
-        - Mas o ponto importante é como isso é passado do banco para o site, atraves da `views.py`.
-        - Usamos `cars = Car.objects.all()` para passar todos as instâncias que estão no banco.
+- __047 - Buscando carros no Banco de Dados com Django ORM__ - Mostrando como passar os dados que ADM insere no banco e como isso seria mostrado aos clientes.
+    - Criamos uma página simples de HTML assim como um CSS somente para visualizar os dados.
+    - Mas o ponto importante é como isso é passado do banco para o site, atraves da `views.py`.
+    - Usamos `cars = Car.objects.all()` para passar todos as instâncias que estão no banco.
 
 
 ### Comandos.
