@@ -25,6 +25,10 @@ body {
     border-radius: 10px;
 }
 
+.botao:hover {
+    background-color: darkviolet;
+}
+
 .preco {
     font-size: 25px;
     color: green;
@@ -37,4 +41,38 @@ body {
 .text-plate {
     font-size: 30px;
     color: rgba(0, 0, 0, 0.637);
+}
+/* ---------------------------------------------- */
+
+.search_campo {
+    margin: 20px 0px 20px 0px;
+    display: inline-block;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 20px 10px 20px;
+    border-radius: 10px;
+}
+.botao_pesquisar {
+    display: inline;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    font-size: 22px;
+    color: white;
+    background-color: green;
+    border-radius: 10px;
+}
+
+.botao_pesquisar:hover {
+    background-color: darkgreen;
+}
+
+.search_input {
+    display: inline-block;
+    padding: 10px 20px 10px 20px;
+    margin: 0px 20px 0px 20px;
+    font-size: 22px;
+    border-radius: 10px;
+    border: 1px solid #9e9e9e;
 }

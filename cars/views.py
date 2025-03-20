@@ -13,14 +13,23 @@ def format_int(value):
     return locale.format_string('%.f', value, grouping=True)
 
 # Create your views here.
-def cars_views(request):
+def cars_views(request, ):
     cars = Car.objects.all()
+    search = request.GET.get('search', '').strip()
+
+    if search:
+        cars = cars.filter(model__icontains=search)
+        print(cars)
     # formatando valores inteiros
     for car in cars:
         car.value = format_float(car.value)
     
+    context = {
+        'cars': cars,
+        'search': search,
+    }
     return render(
         request, 
         'cars/cars_index.html', 
-        {'cars': cars}
+        context,
     )

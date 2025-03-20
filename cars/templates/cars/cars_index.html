@@ -9,33 +9,28 @@
 </head>
 <body>
     <h1>Testando meus carros.</h1>
-    {% for car in cars %}
-        <div class="item">
-            <h2 class="titulo"><strong>{{ car.model }}</strong></h2>
-            <p class="text">ID : <strong>{{ car.id }}</strong></p>
-            <p class="preco">R$ {{ car.value }}</p>
-            <p class="text">Marca : <strong>{{ car.brand }}</strong></p>
-            <p class="text">Ano de fabricação: <strong>{{ car.factory_year }}</strong></p>
-            <p class="text">Ano do modelo: <strong>{{ car.model_year }}</strong></p>
-            <p class="text-plate">Placa: <strong>{{ car.plate }}</strong></p>
-            <p class="text">Description</p>
-            <a href="" class="botao"><strong>Comprar</strong></a>
-        </div>
-    {% endfor %}
-    <div class="item">
-        <h2 class="titulo"><strong>Maverick</strong></h2>
-        <p class="preco">R$ 199.000,00</p>
-        <p class="text"><strong>ID</strong> : 117</p>
-        <p class="text">Carro Esportivo - Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam adipisci minus magni saepe, corporis temporibus quam alias esse itaque architecto corrupti, quisquam accusamus quis, deleniti iusto modi nam animi error.</p>
-        <a href="" class="botao"><strong>Comprar</strong></a>
+    <div class="search_campo">
+        <form action="{% url 'cars:cars_views' %}" method="GET">
+            <input type="search" name="search" class="search_input" placeholder="Pesquisar" value="{{ search }}">
+            <button type="submit" class="botao_pesquisar">Pesquisar</button>
+        </form>
     </div>
-    <div class="item">
-        <h2 class="titulo"><strong>Maverick</strong></h2>
-        <p class="preco">R$ 199.000,00</p>
-        <p class="text"><strong>ID</strong> : 117</p>
-        <p class="text">Carro Esportivo - Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam adipisci minus magni saepe, corporis temporibus quam alias esse itaque architecto corrupti, quisquam accusamus quis, deleniti iusto modi nam animi error.</p>
-        <a href="" class="botao"><strong>Comprar</strong></a>
-    </div>
-
+        {% if cars %}
+            {% for car in cars %}
+                <div class="item">
+                    <h2 class="titulo"><strong>{{ car.model }}</strong></h2>
+                    <p class="text">ID : <strong>{{ car.id }}</strong></p>
+                    <p class="preco">R$ {{ car.value }}</p>
+                    <p class="text">Marca : <strong>{{ car.brand }}</strong></p>
+                    <p class="text">Ano de fabricação: <strong>{{ car.factory_year }}</strong></p>
+                    <p class="text">Ano do modelo: <strong>{{ car.model_year }}</strong></p>
+                    <p class="text-plate">Placa: <strong>{{ car.plate }}</strong></p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="item">
+                <p class="text">Nenhum carro encontrado para a pesquisa "<strong>{{ search }}</strong>".</p>
+            </div>
+        {% endif %}
 </body>
 </html>

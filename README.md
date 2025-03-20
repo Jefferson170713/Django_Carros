@@ -65,6 +65,36 @@
     - Criamos uma página simples de HTML assim como um CSS somente para visualizar os dados.
     - Mas o ponto importante é como isso é passado do banco para o site, atraves da `views.py`.
     - Usamos `cars = Car.objects.all()` para passar todos as instâncias que estão no banco.
+
+- __050 - Filtrando carros com os parâmetros do usuário__ - Filtrando com um campo de busca na página inicial para buscar os carros que queremos.
+    - Primeeiro alteramos a `views.py` para passar o contexto e com isso passar todos os parâmetros necessários, com a variável __context__.
+        - ```plaintext
+            context = {'cars': cars, 'search': search,}
+        ```
+    - Com a variável __context__ sendo passada para a página, podemos agora acessar diretamente. Exemplo abaixo do uso direto.
+        - ```plaintext
+            <input type="search" name="search" class="search_input" placeholder="Pesquisar" value="{{ search }}">
+        ```
+        
+        - ```plaintext
+            {% if cars %}
+                    {% for car in cars %}
+                        <div class="item">
+                            <h2 class="titulo"><strong>{{ car.model }}</strong></h2>
+                            <p class="text">ID : <strong>{{ car.id }}</strong></p>
+                            <p class="preco">R$ {{ car.value }}</p>
+                            <p class="text">Marca : <strong>{{ car.brand }}</strong></p>
+                            <p class="text">Ano de fabricação: <strong>{{ car.factory_year }}</strong></p>
+                            <p class="text">Ano do modelo: <strong>{{ car.model_year }}</strong></p>
+                            <p class="text-plate">Placa: <strong>{{ car.plate }}</strong></p>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="item">
+                        <p class="text">Nenhum carro encontrado para a pesquisa "<strong>{{ search }}</strong>".</p>
+                    </div>
+                {% endif %}
+        ```
 ---
 
 ### Comandos.
