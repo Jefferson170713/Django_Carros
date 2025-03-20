@@ -78,7 +78,7 @@
         ```
         
         - ```plaintext
-            {% if cars %}
+                {% if cars %}
                     {% for car in cars %}
                         <div class="item">
                             <h2 class="titulo"><strong>{{ car.model }}</strong></h2>
@@ -95,7 +95,7 @@
                         <p class="text">Nenhum carro encontrado para a pesquisa "<strong>{{ search }}</strong>".</p>
                     </div>
                 {% endif %}
-        ```
+            ```
 ---
 
 ### Comandos.
