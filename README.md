@@ -1,7 +1,5 @@
 # Django_Carros
----
 ## Repositório do Projeto de estudos sobre Carros.
----
 ### 07 - Django e Banco de Dados (models e admin)
 
 - __037 - Configurando o Admin do nosso model Car__.
@@ -61,7 +59,7 @@
         - ```plaintext
             def format_float(value):
                 return locale.format_string('%.2f', value, grouping=True)
-        ```
+            ```
 
 - __047 - Buscando carros no Banco de Dados com Django ORM__ - Mostrando como passar os dados que ADM insere no banco e como isso seria mostrado aos clientes.
     - Criamos uma página simples de HTML assim como um CSS somente para visualizar os dados.
