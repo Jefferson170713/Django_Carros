@@ -77,7 +77,7 @@
             <input type="search" name="search" class="search_input" placeholder="Pesquisar" value="{{ search }}">
         ```
         
-        - ```plaintext
+        - ```
                 {% if cars %}
                     {% for car in cars %}
                         <div class="item">
@@ -95,6 +95,7 @@
                         <p class="text">Nenhum carro encontrado para a pesquisa "<strong>{{ search }}</strong>".</p>
                     </div>
                 {% endif %}
+
             ```
 ---
 

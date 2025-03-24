@@ -5,6 +5,7 @@ body {
 .titulo {
     margin: 0px;
     font-size: 35px;
+    color: rgba(8, 8, 8, 0.637);
 }
 
 .item {
@@ -14,6 +15,11 @@ body {
     border-radius: 10px;
     background-color: #e2dfdf;
 }
+/* .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 5px;
+} */
 
 .botao {
     display: inline-block;
@@ -75,4 +81,13 @@ body {
     font-size: 22px;
     border-radius: 10px;
     border: 1px solid #9e9e9e;
+}
+.imagem {
+    width: 100%; /* A largura será 100% do contêiner */
+    max-width: 400px; /* Limita a largura máxima */
+    height: auto; /* Ajusta a altura proporcionalmente */
+    max-height: 400px; /* Limita a altura máxima */
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 10px;
 }

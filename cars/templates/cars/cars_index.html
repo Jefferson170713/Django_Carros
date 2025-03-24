@@ -11,14 +11,15 @@
     <h1>Testando meus carros.</h1>
     <div class="search_campo">
         <form action="{% url 'cars:cars_views' %}" method="GET">
-            <input type="search" name="search" class="search_input" placeholder="Pesquisar" value="{{ search }}">
+            <input type="search" name="search" class="search_input" placeholder="Pesquisar carro" value="{{ search }}">
             <button type="submit" class="botao_pesquisar">Pesquisar</button>
         </form>
     </div>
         {% if cars %}
             {% for car in cars %}
-                <div class="item">
+                <div class="item grid">
                     <h2 class="titulo"><strong>{{ car.model }}</strong></h2>
+                    <img class="imagem" src="{{ car.photo.url }}" alt="{{ car.model }}">
                     <p class="text">ID : <strong>{{ car.id }}</strong></p>
                     <p class="preco">R$ {{ car.value }}</p>
                     <p class="text">Marca : <strong>{{ car.brand }}</strong></p>
