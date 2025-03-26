@@ -2,8 +2,16 @@
 
 {% block title %}Meus carros{% endblock %}
 
-{% block content %}
+{% block menu %}
+    {% include 'cars/menu.html' %}
+{% endblock %}
+
+{% block header %}
     {% include 'cars/header_search.html' %}
+{% endblock %}
+
+
+{% block content %}
     <div>
         {% if cars %}
             {% for car in cars %}
@@ -24,5 +32,8 @@
             </div>
         {% endif %}
     </div>
+{% endblock %}
+
+{% block footer %}
     {% include 'cars/footer_base.html' %}
 {% endblock %}

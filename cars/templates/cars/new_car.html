@@ -1,0 +1,26 @@
+{% extends 'cars/base_template.html' %}
+
+{% block title %}Meus carros - Cadastro{% endblock %}
+
+{% block menu %}
+    {% include 'cars/menu.html' %}
+{% endblock %}
+
+{% block content %}
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ new_car_form.model }}
+        {{ new_car_form.brand }}
+        {{ new_car_form.factory_year }}
+        {{ new_car_form.model_year }}
+        {{ new_car_form.value }}
+        {{ new_car_form.plate }}
+        {{ new_car_form.photo }}
+        <input type="submit" value="Cadastrar" />
+
+    </form>
+{% endblock %}
+
+{% block footer %}
+    {% include 'cars/footer_base.html' %}
+{% endblock %}

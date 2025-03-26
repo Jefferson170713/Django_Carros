@@ -1,5 +1,4 @@
 {% load static %}
-{% extends 'cars/base_template.html' %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -9,8 +8,8 @@
     <title>{% block title %}My Cars{% endblock %}</title>
 </head>
 <body>
-    
 
+    {% include 'cars/menu.html' %}
     {% block content %}
     {% endblock %}
 
