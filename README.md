@@ -117,12 +117,19 @@
 ### 10 - Forms no Django
 
 - __055 - Criando nosso primeiro Form__ - Criando meu primeiro form para adicionar novos veículos.
+
     - 1° - Criamos a view `new_car` que irá retornar a página `cars/new_car.html`.
+
         - 1.1 - Inicializamos dentro da view `new_car_form = CarForm()` para passar para o contexto da página, inicialmente vazia.
+
     - 2° - É preciso criar o arquivo `forms.py` dentro do nosso app de __cars__. 
+
         - 2.1 - Importar a biblioteca `from django import forms`. 
+
         - 2.2 - Importar a biblioteca `from cars.models import Brand` para usar na classe, pois ela é chave estrangeira.
+
         - 2.3 - Com a criação da classe, precisamos atribuir `queryset=Brand.objects.all()`, para a seleção de nossas marcas cadastradas no sistema.
+
         ```plaintext
             class CarForm(forms.Form):
             model = forms.CharField(max_length=150)
@@ -133,10 +140,15 @@
             value = forms.FloatField()
             photo = forms.ImageField()
         ```
-    - 3° - No template de `new_car.html`
+
+    - 3° - No template de `new_car.html`.
+
         - 3.1 - Dentro do formulário da página usamos __multipart/form-data__ assim `<form action="" method="POST" enctype="multipart/form-data">` para passar para dentro do banco vários parâmetros ao mesmo tempo.
+
         - 3.2 - Para critérios de segurança do __Django__ usamos `{% csrf_token %}`.
+
         - 3.3 - E dentro do __context__, passamos.
+        
         ```plaintext
             {% block content %}
                 <form action="" method="POST" enctype="multipart/form-data">
