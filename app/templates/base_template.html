@@ -1,0 +1,75 @@
+{% load static %}
+{% extends 'cars/base_template.html' %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'cars/css/css.css' %}?v=1.0">
+    <title>{% block title %}My Cars{% endblock %}</title>
+</head>
+<body>
+    
+
+    {% block content %}
+    {% endblock %}
+
+    
+</body>
+</html>
+
+
+{% comment %} {% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'cars/css/css.css' %}?v=1.0">
+    <title>My Cars</title>
+</head>
+<body>
+    <h1>Testando meus carros.</h1>
+    {% block content %}
+    {% endblock %}
+</body>
+</html> {% endcomment %}
+
+
+<!-- {% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'cars/css/css.css' %}?v=1.0">
+    <title>My Cars</title>
+</head>
+<body>
+    <h1>Testando meus carros.</h1>
+    <div class="search_campo">
+        <form action="{% url 'cars:cars_views' %}" method="GET">
+            <input type="search" name="search" class="search_input" placeholder="Pesquisar carro" value="{{ search }}">
+            <button type="submit" class="botao_pesquisar">Pesquisar</button>
+        </form>
+    </div>
+        {% if cars %}
+            {% for car in cars %}
+                <div class="item grid">
+                    <h2 class="titulo"><strong>{{ car.model }}</strong></h2>
+                    <img class="imagem" src="{{ car.photo.url }}" alt="{{ car.model }}">
+                    <p class="text">ID : <strong>{{ car.id }}</strong></p>
+                    <p class="preco">R$ {{ car.value }}</p>
+                    <p class="text">Marca : <strong>{{ car.brand }}</strong></p>
+                    <p class="text">Ano de fabricação: <strong>{{ car.factory_year }}</strong></p>
+                    <p class="text">Ano do modelo: <strong>{{ car.model_year }}</strong></p>
+                    <p class="text-plate">Placa: <strong>{{ car.plate }}</strong></p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="item">
+                <p class="text">Nenhum carro encontrado para a pesquisa "<strong>{{ search }}</strong>".</p>
+            </div>
+        {% endif %}
+</body>
+</html> -->

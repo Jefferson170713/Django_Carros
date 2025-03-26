@@ -1,0 +1,21 @@
+{% comment %} {% extends 'cars/base_template.html' %} {% endcomment %}
+
+{% block header %}
+    <div class="menu">
+        <nav>
+            <ul class="menu-list">
+                <li><a href="{% url 'cars:cars_views' %}">Início</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
+                <li><a href="#">Ajuda</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="search_campo">
+        <form action="{% url 'cars:cars_views' %}" method="GET">
+            <input type="search" name="search" class="search_input" placeholder="Pesquisar carro" value="{{ search }}">
+            <button type="submit" class="botao_pesquisar">Pesquisar</button>
+        </form>
+    </div>
+{% endblock %}

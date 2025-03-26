@@ -68,6 +68,7 @@ body {
     color: white;
     background-color: green;
     border-radius: 10px;
+    border: 1px solid green;
 }
 
 .botao_pesquisar:hover {
@@ -90,4 +91,42 @@ body {
     object-fit: cover;
     border-radius: 10px;
     margin: 10px;
+}
+.footer {
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+    background-color: #f1f1f1;
+    /* border-top: 1px solid #9e9e9e;
+    border-radius: 10px; */
+}
+/* ---------------------------------------------- */
+.menu {
+    background-color: #333; /* Cor de fundo do menu */
+    padding: 10px 0;
+    margin: 0px;
+}
+
+.menu-list {
+    list-style: none; /* Remove os marcadores da lista */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Exibe os itens do menu em linha */
+    justify-content: center; /* Centraliza os itens */
+}
+
+.menu-list li {
+    margin: 0 15px; /* Espaçamento entre os itens */
+}
+
+.menu-list a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color: white; /* Cor do texto */
+    font-size: 20px;
+    font-weight: bold;
+    transition: color 0.3s; /* Animação ao passar o mouse */
+}
+
+.menu-list a:hover {
+    color: #ffcc00; /* Cor ao passar o mouse */
 }

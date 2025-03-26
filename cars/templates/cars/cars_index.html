@@ -1,20 +1,10 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'cars/css/css.css' %}?v=1.0">
-    <title>My Cars</title>
-</head>
-<body>
-    <h1>Testando meus carros.</h1>
-    <div class="search_campo">
-        <form action="{% url 'cars:cars_views' %}" method="GET">
-            <input type="search" name="search" class="search_input" placeholder="Pesquisar carro" value="{{ search }}">
-            <button type="submit" class="botao_pesquisar">Pesquisar</button>
-        </form>
-    </div>
+{% extends 'cars/base_template.html' %}
+
+{% block title %}Meus carros{% endblock %}
+
+{% block content %}
+    {% include 'cars/header_search.html' %}
+    <div>
         {% if cars %}
             {% for car in cars %}
                 <div class="item grid">
@@ -33,5 +23,6 @@
                 <p class="text">Nenhum carro encontrado para a pesquisa "<strong>{{ search }}</strong>".</p>
             </div>
         {% endif %}
-</body>
-</html>
+    </div>
+    {% include 'cars/footer_base.html' %}
+{% endblock %}

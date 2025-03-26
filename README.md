@@ -76,7 +76,6 @@
         - ```plaintext
             <input type="search" name="search" class="search_input" placeholder="Pesquisar" value="{{ search }}">
         ```
-        
         - ```
                 {% if cars %}
                     {% for car in cars %}
@@ -97,6 +96,22 @@
                 {% endif %}
 
             ```
+- __053 - Configurando o base template__ - Contruindo um modelo padrão para o nosso projeto e de acordo com o contexto, mudamos as estruturas.
+
+    - Em __settings.py -> TEMPLATES__, precisamos incluir a pasta templetes, crie se ela não exixtir.
+
+    - Podemos também criar templetes dentro do nosso app que construímos, e dentro dele colocar o nosso __namespacy__.
+
+    - Podemos e estamos usando os recuros de `include` na `cars_index.html` para exibir em nossa views.
+        - ```plaintext
+            {% extends 'cars/base_template.html' %}
+        ```
+
+        - ```plaintext
+            {% include 'cars/header_search.html' %}
+        ```
+    - Fiz mais 2 arquivos para implementar nossa aplicação, `header_search.html` e `footer_base.html` para funcionar na página.
+
 ---
 
 ### Comandos.
