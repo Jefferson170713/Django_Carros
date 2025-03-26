@@ -105,12 +105,12 @@
     - Podemos e estamos usando os recuros de `include` na `cars_index.html` para exibir em nossa views.
         - ```plaintext
             {% extends 'cars/base_template.html' %}
-        ```
+            ```
 
     - Dessa forma, funciona nas minhas views e posso fazer alterações de forma mais simples sem usar por enquanto o recurso de `partials`.
         - ```plaintext
             {% include 'cars/header_search.html' %}
-        ```
+            ```
 
     - Fiz mais 2 arquivos para implementar nossa aplicação, `header_search.html` e `footer_base.html` para funcionar na página.
 
