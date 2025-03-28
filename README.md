@@ -1,5 +1,6 @@
 # Django_Carros
 ## Repositório do Projeto de estudos sobre Carros.
+---
 ### 07 - Django e Banco de Dados (models e admin)
 
 - __037 - Configurando o Admin do nosso model Car__.
@@ -132,13 +133,13 @@
 
         ```plaintext
             class CarForm(forms.Form):
-            model = forms.CharField(max_length=150)
-            brand = forms.ModelChoiceField(queryset=Brand.objects.all())
-            factory_year = forms.IntegerField()
-            model_year = forms.IntegerField()
-            plate = forms.CharField(max_length=10)
-            value = forms.FloatField()
-            photo = forms.ImageField()
+                model = forms.CharField(max_length=150)
+                brand = forms.ModelChoiceField(queryset=Brand.objects.all())
+                factory_year = forms.IntegerField()
+                model_year = forms.IntegerField()
+                plate = forms.CharField(max_length=10)
+                value = forms.FloatField()
+                photo = forms.ImageField()
         ```
 
     - 3° - No template de `new_car.html`.
@@ -161,7 +162,6 @@
                     {{ new_car_form.plate }}
                     {{ new_car_form.photo }}
                     <input type="submit" value="Cadastrar" />
-
                 </form>
             {% endblock %}
         ```

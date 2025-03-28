@@ -9,4 +9,3 @@ class CarForm(forms.Form):
     plate = forms.CharField(max_length=10)
     value = forms.FloatField()
     photo = forms.ImageField()
-# Compare this snippet from cars/views.py:
