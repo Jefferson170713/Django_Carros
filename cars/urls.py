@@ -6,6 +6,6 @@ from cars.views import cars_views, new_car
 app_name = 'cars'
 
 urlpatterns = [
-    path('', cars_views, name='cars_views'),
+    path('', cars_views, name='cars_index'),
     path('new_car/', new_car, name='new_car'),
 ] #+ static( settings.MEDIA_URL, document_root=settings.MEDIA_ROOT )

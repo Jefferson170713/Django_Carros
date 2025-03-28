@@ -1,6 +1,6 @@
 {% block header %}
     <div class="search_campo">
-        <form action="{% url 'cars:cars_views' %}" method="GET">
+        <form action="{% url 'cars:cars_index' %}" method="GET">
             <input type="search" name="search" class="search_input" placeholder="Pesquisar carro" value="{{ search }}">
             <button type="submit" class="botao_pesquisar">Pesquisar</button>
         </form>

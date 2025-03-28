@@ -146,7 +146,7 @@
 
         - 3.1 - Dentro do formulário da página usamos __multipart/form-data__ assim `<form action="" method="POST" enctype="multipart/form-data">` para passar para dentro do banco vários parâmetros ao mesmo tempo.
 
-        - 3.2 - Para critérios de segurança do __Django__ usamos `{% csrf_token %}`.
+        - 3.2 - Para critérios de segurança do __Django__ usamos `{% csrf_token %}` em todos os formulários.
 
         - 3.3 - E dentro do __context__, passamos.
         
@@ -166,7 +166,71 @@
             {% endblock %}
         ```
 
-    
+- __056 - Finalizando o cadastro de um novo carro__ - Para que eu possa salvar meus dados novos. 
+
+    - 1° - Trabalhamos primeiro na `views.py --> new_car`.
+
+        - 1.2 - Importamos `from cars.forms import Carform` para usar na `views.py` na `new_car`. Precisamos também importar a função __redirect__ `from django.shortcuts import redirect` para redirecionar as nossas urls.
+
+        - 1.2 - Precisamos validar qual método está vindo se é __POST__ ou __GET__.
+
+        - 1.3 - Depois precisamos pegar o que vem de __request.POST__ e __request.FILES__, nesse caso request.FILES porque temos um arquivo de imagem. Ficando assim `new_car_form = CarForm(request.POST, request.FILES)`.
+
+        - 1.4 - Testamos se a condicação e os campos preenchidos estão válidos `if new_car_form.is_valid():`.
+
+        - 1.5 - Precisamos então criar uma função para salvar que não vem nativo do __forms.py__ --> `new_car_form.save()`.
+
+        - Mostrando como ficou ...
+        ```plaintext
+            from django.shortcuts import render, redirect
+            ...
+            from cars.forms import CarForm
+
+            ...
+
+            def new_car( request ):
+                if request.method == 'POST':
+                    new_car_form = CarForm(request.POST, request.FILES)
+                    if new_car_form.is_valid():
+                        new_car_form.save()
+                        return redirect('cars:cars_index')
+                else:
+                    new_car_form = CarForm()
+
+                context ={
+                    'new_car_form': new_car_form,
+                }
+                return render(
+                    request, 
+                    'cars/new_car.html',
+                    context,
+                )
+        ```
+
+    - 2° - No arquivo de `forms.py` vamos importar __Car__ e criar a função save().
+        - 2.1 - Importando Car `from cars.models import Car`.
+
+        - 2.2 - Criando a função __save__.
+
+            - 2.2.1 - Instanciamos car e atribuímos de acordo com o que está em __models.py__.
+
+            - 2.2.2 - Ficando assim:
+
+            ```plaintext
+                def save(self):
+                    car = Car(
+                        model = self.cleaned_data['model'],
+                        brand = self.cleaned_data['brand'],
+                        factory_year = self.cleaned_data['factory_year'],
+                        model_year = self.cleaned_data['model_year'],
+                        plate = self.cleaned_data['plate'],
+                        value = self.cleaned_data['value'],
+                        photo = self.cleaned_data['photo']
+                    )
+                    car.save()
+                    return car
+            ```
+
 
 
 ---

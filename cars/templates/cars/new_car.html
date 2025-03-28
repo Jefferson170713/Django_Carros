@@ -9,14 +9,28 @@
 {% block content %}
     <form action="" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ new_car_form.model }}
-        {{ new_car_form.brand }}
-        {{ new_car_form.factory_year }}
-        {{ new_car_form.model_year }}
-        {{ new_car_form.value }}
-        {{ new_car_form.plate }}
-        {{ new_car_form.photo }}
-        <input type="submit" value="Cadastrar" />
+        <p>
+            <strong>Modelo</strong>: {{ new_car_form.model }}            
+        </p>
+        <p>
+            <strong>Marca</strong>: {{ new_car_form.brand }}            
+        </p>
+        <p>
+            <strong>Ano de Fabricação</strong>: {{ new_car_form.factory_year}}
+        </p>
+        <p>
+            <strong>Ano do Modelo</strong>: {{ new_car_form.model_year }}            
+        </p>
+        <p>
+            <strong>Valor</strong>: {{ new_car_form.value }}
+        </p>
+        <p>
+            <strong>Placa</strong>: {{ new_car_form.plate }}            
+        </p>
+        <p>
+            <strong>Foto do Carro</strong>: {{ new_car_form.photo }}
+        </p>
+        <input type="submit" value="Cadastrar" class="botao_pesquisar"/>
     </form>
 {% endblock %}
 
