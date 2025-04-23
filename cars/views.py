@@ -3,6 +3,7 @@ from django.http import HttpResponse
 import locale
 from cars.models import Car
 from cars.forms import CarForm
+from cars.forms import CarModelForm
 
 # Configura a localidade para o formato brasileiro
 locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
@@ -37,12 +38,12 @@ def cars_views( request ):
 
 def new_car( request ):
     if request.method == 'POST':
-        new_car_form = CarForm(request.POST, request.FILES)
+        new_car_form = CarModelForm(request.POST, request.FILES)
         if new_car_form.is_valid():
             new_car_form.save()
             return redirect('cars:cars_index')
     else:
-        new_car_form = CarForm()
+        new_car_form = CarModelForm()
 
     context ={
         'new_car_form': new_car_form,
