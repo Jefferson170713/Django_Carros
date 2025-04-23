@@ -181,6 +181,7 @@
         - 1.5 - Precisamos então criar uma função para salvar que não vem nativo do __forms.py__ --> `new_car_form.save()`.
 
         - Mostrando como ficou ...
+
         ```plaintext
             from django.shortcuts import render, redirect
             ...
@@ -208,6 +209,7 @@
         ```
 
     - 2° - No arquivo de `forms.py` vamos importar __Car__ e criar a função save().
+
         - 2.1 - Importando Car `from cars.models import Car`.
 
         - 2.2 - Criando a função __save__.
@@ -250,7 +252,34 @@
                     fields = '__all__'
         
         ```
+    
+    - 4° - Após isso precisamos ir em `views.py` e alterar a *new_car*.
 
+        - 1 - Na views *new_car* onde tinha `Carfom` substitui por `CarModelForm`.
+
+        - Ficando assim:
+
+            ```plaintext
+                def new_car( request ):
+                    if request.method == 'POST':
+                        new_car_form = CarModelForm(request.POST, request.FILES)
+                        if new_car_form.is_valid():
+                            new_car_form.save()
+                            return redirect('cars:cars_index')
+                    else:
+                        new_car_form = CarModelForm()
+
+                    context ={
+                        'new_car_form': new_car_form,
+                    }
+                    return render(
+                        request, 
+                        'cars/new_car.html',
+                        context,
+                    )
+            ```
+
+            
 ---
 
 ### Comandos.
