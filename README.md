@@ -231,7 +231,25 @@
                     return car
             ```
 
+- __057 - Migrando para ModelForm__ - Salvando de forma mais simples com ModelForms.
 
+    - 1° - Precisa instanciar `from cars.models import Car`.
+
+    - 2° - Com a classe *Meta* que define os metadados em modelos de formulários no Django, é usada para associar ao formulário do a um modelo.
+
+        - 2.1 - Em `modelo = Car` associa o formulário ao modelo Car.
+
+        - 2.2 - Em `fields = '__all__'` é um *Dunder method* que serve para atribuir todos os campos dos formulários que estamos tentando inserir, inclusive futuras modificações. 
+
+    - 3° - Como ficou:
+
+        ```plaintext
+            class CarModelForm(forms.ModelForm):
+                class Meta:
+                    model = Car
+                    fields = '__all__'
+        
+        ```
 
 ---
 
