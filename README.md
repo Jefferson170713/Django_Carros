@@ -279,7 +279,25 @@
                     )
             ```
 
-            
+- __058 - Criando validações__ - No ModelForms criaremos validações personalizadas.
+
+    - 1° - Para criar __*validações*__ no *ModelForm*, existe um padrão que o próprio Django identifica.
+
+        - 1.1 - Por exemplo na aplicação que estou construindo, no meu modelo tem um campo que se chama *model*, e o padrão de validação do *ModelForm* da função é `clean_` antes do nome de qualquer modelo. Ficando assim `clean_<nome_do_campo>()`.
+
+        - 1.2 - de como ficou `def clean_moodel(self):` após isso vem a sua regra de negócio que vai de acordo com a sua aplicaçao.
+
+    - 2° - Outro passa importante é que fica inserido dentro do classe de *ModelForm*.
+
+    - 3° - Ficando assim:
+
+        ```plaintext
+            def clean_value(self):
+                value = self.cleaned_data.get('value')
+                if value < 20000:
+                    self.add_error('value', 'O valor não pode ser menor que R$ 20.000,00')
+                return value
+        ```
 ---
 
 ### Comandos.

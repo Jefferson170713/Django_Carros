@@ -21,7 +21,7 @@ class Car(models.Model):
         on_delete=models.PROTECT, 
         related_name='car_brand', 
         verbose_name='MARCA'
-        )
+    )
     factory_year = models.IntegerField( blank=True, null=True, verbose_name='ANO DE FABRICAÇÃO' )
     model_year = models.IntegerField( blank=True, null=True, verbose_name='ANO DO MODELO' )
     plate = models.CharField( max_length=10, blank=True, null=True , verbose_name='PLACA' )
@@ -31,7 +31,7 @@ class Car(models.Model):
         blank=True, 
         null=True,
         verbose_name='FOTO' 
-        )
+    )
 
     class Meta:
         verbose_name = 'Carro'
