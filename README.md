@@ -279,7 +279,7 @@
                     )
             ```
 
-- __058 - Criando validações__ - No ModelForms criaremos validações personalizadas.
+- __058 - Criando validações__ - No *ModelForms* criaremos validações personalizadas.
 
     - 1° - Para criar __*validações*__ no *ModelForm*, existe um padrão que o próprio Django identifica.
 
@@ -295,7 +295,7 @@
             def clean_value(self):
                 value = self.cleaned_data.get('value')
                 if value < 20000:
-                    self.add_error('value', 'O valor não pode ser menor que R$ 20.000,00')
+                    self.add_error('value', 'O valor não pode ser menor que R$ 20.000,00!')
                 return value
         ```
 ---
