@@ -298,6 +298,26 @@
                     self.add_error('value', 'O valor não pode ser menor que R$ 20.000,00!')
                 return value
         ```
+
+- __059 - Introdução ao módulo__ - O que é o *auth_user* no Django? 
+    
+    - 1° - O *auth_user* é o modelo padrão do Django para representar usuários no sistema. Ele faz parte do app *django.contrib.auth* e é usado para autenticação, autorização e gerenciamento de usuários.
+    
+    - 2° - Sistema de Autenticação do Django (`auth_user`), fica `*django.contrib.auth*`.
+    
+    - 3° - Principais Campos do Modelo `auth_user`: 
+
+        - 3.1 - **`username`** : Nome de usuário único.
+        - 3.2 - **`password`**: Senha do usuário (armazenada de forma segura com hashing).
+        - 3.3 - **`email`**: Endereço de e-mail do usuário.
+        - 3.4 - **`first_name`**: Primeiro nome do usuário.
+        - 3.5 - **`last_name`**: Sobrenome do usuário.
+        - 3.6 - **`is_staff`**: Indica se o usuário pode acessar o Django Admin.
+        - 3.7 - **`is_superuser`**: Indica se o usuário tem todas as permissões (superusuário).
+        - 3.8 - **`is_active`**: Indica se o usuário está ativo.
+        - 3.9 - **`last_login`**: Data e hora do último login.
+        - 3.10 - **`date_joined`**: Data e hora em que o usuário foi criado.
+    
 ---
 
 ### Comandos.
