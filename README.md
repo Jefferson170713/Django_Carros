@@ -317,7 +317,39 @@
         - 3.8 - **`is_active`**: Indica se o usuário está ativo.
         - 3.9 - **`last_login`**: Data e hora do último login.
         - 3.10 - **`date_joined`**: Data e hora em que o usuário foi criado.
+
+- __060 - Criando nossa rota de registro de usuários__ - Primeiro vamos criar um app separado, no terminal digitaremos *python manage.py startapp accounts* somente para os usuários *o nome accounts é genérico mas poderia ser outro*, como acesso e teste de senhas.
+    - 1° - No coração do nosso sistema ou em *app*, no arquivo de __*settings.py*__.
+
+        - 1.1 Vamos em *INSTALLED_APPS* e registrar nosso novo app.
     
+    - 2° - Vamos primeiro criar uma nova rota para integrar ao nosso sistema,
+        - 2.1 - Vamos em *urls.py* do nosso app e 
+        - 2.2 - importamos a views `from accounts.views import register_view`
+        - 2.3 - Adicionamos a na url `path('register/', register_view, name='register'),`.
+        - 2.4 - Agora vamos criar o arquivo de *urls.py* em *accounts*.
+            ```plaintext
+                from django.urls import path
+                from accounts.views import register_view
+
+                app_name = 'accounts'
+
+                urlpatterns = [
+                    path('register/', register_view, name='register'),
+                ]
+            ```
+    - 3° - Criando a *views.py de accounts*.
+        - 3.1 - É um formulário embutido do Django que facilita a criação de novos usuários. Ele já inclui campos como *username, password1 e password2 (para confirmação de senha)*.
+        - 3.2 para criar ...
+            ```plaintext
+                from django.shortcuts import render
+                from django.contrib.auth import UserCreationForm
+
+                def register_view(request):
+                    user_form = UserCreationForm()
+                    return render(request, 'accounts/register.html', {'user_form': user_form})            
+            ```
+    - 4° - Agora vamos criar a pasta *templates* e o *register.html* de __*accounts*__.
 ---
 
 ### Comandos.
