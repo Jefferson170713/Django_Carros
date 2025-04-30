@@ -301,9 +301,9 @@
 
 - __059 - Introdução ao módulo__ - O que é o *auth_user* no Django? 
     
-    - 1° - O *auth_user* é o modelo padrão do Django para representar usuários no sistema. Ele faz parte do app *django.contrib.auth* e é usado para autenticação, autorização e gerenciamento de usuários.
+    - 1° - O *auth_user* é o modelo padrão do Django para representar usuários no sistema. Ele faz parte do app *django.contrib.auth.forms* e é usado para autenticação, autorização e gerenciamento de usuários.
     
-    - 2° - Sistema de Autenticação do Django (`auth_user`), fica `*django.contrib.auth*`.
+    - 2° - Sistema de Autenticação do Django (`auth_user`), fica `*django.contrib.auth.forms*`.
     
     - 3° - Principais Campos do Modelo `auth_user`: 
 
@@ -326,7 +326,7 @@
     - 2° - Vamos primeiro criar uma nova rota para integrar ao nosso sistema,
         - 2.1 - Vamos em *urls.py* do nosso app e 
         - 2.2 - importamos a views `from accounts.views import register_view`
-        - 2.3 - Adicionamos a na url `path('register/', register_view, name='register'),`.
+        - 2.3 - Adicionamos a na url `path('', register_view, name='register'),`.
         - 2.4 - Agora vamos criar o arquivo de *urls.py* em *accounts*.
             ```plaintext
                 from django.urls import path
