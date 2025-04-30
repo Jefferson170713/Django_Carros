@@ -7,7 +7,7 @@ from accounts.views import register_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('register/', include('accounts.urls')),
+    path('', include('accounts.urls')),
     #path('cars/', include('cars.urls')),
     path('', include('cars.urls')), # aqui é minha raiz do projeto, então não preciso colocar /cars/ na url
 ] + static( settings.MEDIA_URL, document_root=settings.MEDIA_ROOT )
