@@ -1,13 +1,28 @@
 {% extends 'accounts/base_template.html' %}
 
-{% block title %}Meus carros{% endblock %}
+{% block title %}Meus carros registro{% endblock %}
 
-{% block menu %}
-    {% include 'cars/menu.html' %}
-{% endblock %}
 
 {% block content %}
-    <h1>Teste com registro</h1>
+    <div class="fomulario">
+        <h1>Registrar</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div>
+                <label for="id_username" >Usuário:</label>
+                {{ user_form.username }}
+            </div>
+            <div>
+                <label for="id_password1">Senha:</label>
+                {{ user_form.password1 }}
+            </div>
+            <div>
+                <label for="id_password2">Confirmação de Senha:</label>
+                {{ user_form.password2 }}
+            </div>
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
 {% endblock %}
 
 {% block footer %}
