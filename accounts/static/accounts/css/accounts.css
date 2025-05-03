@@ -1,132 +1,57 @@
+/* Centralizar o formulário na página */
 body {
-    font-family: Arial, sans-serif;
-    /* background-color: yellow; */
-}
-.titulo {
-    margin: 0px;
-    font-size: 35px;
-    color: rgba(8, 8, 8, 0.637);
-}
-
-.item {
-    margin: 10px 20px 10px 20px;
-    padding: 20px 40px 20px 24px;
-    border: 1px solid #9e9e9e;
-    border-radius: 10px;
-    background-color: #e2dfdf;
-}
-/* .grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 5px;
-} */
-
-.botao {
-    display: inline-block;
-    padding: 10px 20px 10px 20px;
-    text-decoration: none;
-    font-size: 22px;
-    color: white;
-    background-color: blueviolet;
-    border-radius: 10px;
-}
-
-.botao:hover {
-    background-color: darkviolet;
-}
-
-.preco {
-    font-size: 25px;
-    color: green;
-}
-
-.text {
-    font-size: 20px;
-    color: rgba(0, 0, 0, 0.637);
-}
-.text-plate {
-    font-size: 30px;
-    color: rgba(0, 0, 0, 0.637);
-}
-/* ---------------------------------------------- */
-
-.search_campo {
-    margin: 20px 0px 20px 0px;
-    display: inline-block;
-    width: 100%;
-    align-items: center;
+    display: flex;
     justify-content: center;
-    text-align: center;
-    padding: 10px 20px 10px 20px;
-    border-radius: 10px;
-}
-.botao_pesquisar {
-    display: inline;
-    padding: 10px 20px 10px 20px;
-    text-decoration: none;
-    font-size: 22px;
-    color: white;
-    background-color: green;
-    border-radius: 10px;
-    border: 1px solid green;
-}
-
-.botao_pesquisar:hover {
-    background-color: darkgreen;
-}
-
-.search_input {
-    display: inline-block;
-    padding: 10px 20px 10px 20px;
-    margin: 0px 20px 0px 20px;
-    font-size: 22px;
-    border-radius: 10px;
-    border: 1px solid #9e9e9e;
-}
-.imagem {
-    width: 100%; /* A largura será 100% do contêiner */
-    max-width: 400px; /* Limita a largura máxima */
-    height: auto; /* Ajusta a altura proporcionalmente */
-    max-height: 400px; /* Limita a altura máxima */
-    object-fit: cover;
-    border-radius: 10px;
-    margin: 10px;
-}
-.footer {
-    margin-top: 20px;
-    padding: 10px;
-    text-align: center;
-    background-color: #f1f1f1;
-    /* border-top: 1px solid #9e9e9e;
-    border-radius: 10px; */
-}
-/* ---------------------------------------------- */
-.menu {
-    background-color: #333; /* Cor de fundo do menu */
-    padding: 10px 0;
-    margin: 0px;
-}
-
-.menu-list {
-    list-style: none; /* Remove os marcadores da lista */
+    align-items: center;
+    height: 100vh; /* Altura total da janela */
     margin: 0;
-    padding: 0;
-    display: flex; /* Exibe os itens do menu em linha */
-    justify-content: center; /* Centraliza os itens */
+    background-color: #f5f5f5; /* Cor de fundo opcional */
+    font-family: Arial, sans-serif;
 }
 
-.menu-list li {
-    margin: 0 15px; /* Espaçamento entre os itens */
+.fomulario {
+    background-color: #ffffff; /* Fundo branco para o formulário */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar o formulário */
+    width: 100%;
+    max-width: 400px; /* Largura máxima do formulário */
 }
 
-.menu-list a {
-    text-decoration: none; /* Remove o sublinhado dos links */
-    color: white; /* Cor do texto */
-    font-size: 20px;
+.fomulario label {
+    display: block;
+    margin-bottom: 5px;
     font-weight: bold;
-    transition: color 0.3s; /* Animação ao passar o mouse */
+    color: #333; /* Cor do texto */
 }
 
-.menu-list a:hover {
-    color: #ffcc00; /* Cor ao passar o mouse */
+.fomulario input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box; /* Garante que padding e border não aumentem a largura total */
+}
+
+.fomulario input:focus {
+    border-color: #007bff; /* Cor da borda ao focar no campo */
+    outline: none; /* Remove o contorno padrão */
+}
+
+.fomulario button {
+    width: 100%;
+    padding: 10px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.fomulario button:hover {
+    background-color: rgb(12, 172, 12);
 }

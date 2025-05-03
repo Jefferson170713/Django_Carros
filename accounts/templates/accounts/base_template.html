@@ -8,20 +8,7 @@
     <title>{% block title %}My Cars{% endblock %}</title>
 </head>
 <body>
-    <header>
-        {% block menu %}
-        {% endblock %}
-
-        {% block header %}
-        {% endblock %}
-    </header>
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
-    <footer>
-        {% block footer %}
-        {% endblock %}
-    </footer>
+    {% block content %}
+    {% endblock %}
 </body>
 </html>
