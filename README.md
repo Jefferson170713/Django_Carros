@@ -350,6 +350,46 @@
                     return render(request, 'accounts/register.html', {'user_form': user_form})            
             ```
     - 4° - Agora vamos criar a pasta *templates* e o *register.html* de __*accounts*__.
+        - 4.1 - usamos o atributo *{% csrf_token %}* para dar segurança e ficando assim: 
+        ````plaintext
+            {% block content %}
+                <div class="fomulario">
+                    <h1>Registrar</h1>
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        <div>
+                            <label for="id_username" >Usuário:</label>
+                            {{ user_form.username }}
+                        </div>
+                        <div>
+                            <label for="id_password1">Senha:</label>
+                            {{ user_form.password1 }}
+                        </div>
+                        <div>
+                            <label for="id_password2">Confirmação de Senha:</label>
+                            {{ user_form.password2 }}
+                        </div>
+                        <button type="submit">Cadastrar</button>
+                    </form>
+                </div>
+            {% endblock %}
+        ````
+- __061 - Registrando nosso primeiro usuário__ - Agora vamos registrar nosso primeiro usuário no sistema.
+    - 1° - Vamos em *views.py* e adicionar o método de *POST* para registrar o usuário.
+        ```plaintext
+            from django.contrib.auth import UserCreationForm
+            from django.shortcuts import render, redirect
+
+            def register_view(request):
+                if request.method == 'POST':
+                    user_form = UserCreationForm(request.POST)
+                    if user_form.is_valid():
+                        user_form.save()
+                        return redirect('accounts:login')
+                else:
+                    user_form = UserCreationForm()
+                return render(request, 'accounts/register.html', {'user_form': user_form})
+        ```
 ---
 
 ### Comandos.
