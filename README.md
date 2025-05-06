@@ -390,6 +390,17 @@
                     user_form = UserCreationForm()
                 return render(request, 'accounts/register.html', {'user_form': user_form})
         ```
+    - 2° - Para  fazer o registro de segurança se o usuário já existe, usamos o método `is_valid()` que já vem embutido no Django.
+    - 3° - Após isso, redirecionamos para a página de login, que ainda não existe, mas já deixamos o caminho certo.
+    - 4° - Agora para verificar se o usuário já existe com o mesmo nome cadastrado em nossa base de dados. Acrescetamos o seguinte código no *register.html* no erro de  `{{ user_form.username.errors }}` e em `{{ user_form.password1.errors }}` e  `{{ user_form.password2.errors }}`. Com isso, se o usuário já existir, ele vai mostrar o erro de que o usuário já existe. veja o eexemplo abaixo:
+
+        ```plaintext
+            <div>
+                {{ user_form.username.errors }}
+                <label for="id_username" >Usuário:</label>
+                {{ user_form.username }}
+            </div>         
+        ```
 ---
 
 ### Comandos.

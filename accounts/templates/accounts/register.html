@@ -2,9 +2,9 @@
 
 {% block title %}Meus carros registro{% endblock %}
 
-{% block menu %}
+<!-- {% block menu %}
     {% include 'cars/menu.html' %}
-{% endblock %}
+{% endblock %} -->
 
 {% block content %}
     <div class="fomulario">
@@ -12,14 +12,17 @@
         <form action="" method="POST">
             {% csrf_token %}
             <div>
+                {{ user_form.username.errors }}
                 <label for="id_username" >Usuário:</label>
                 {{ user_form.username }}
             </div>
             <div>
+                {{ user_form.password1.errors }}
                 <label for="id_password1">Senha:</label>
                 {{ user_form.password1 }}
             </div>
             <div>
+                {{ user_form.password2.errors }}
                 <label for="id_password2">Confirmação de Senha:</label>
                 {{ user_form.password2 }}
             </div>
@@ -28,6 +31,6 @@
     </div>
 {% endblock %}
 
-{% block footer %}
+<!-- {% block footer %}
     {% include 'cars/footer_base.html' %}
-{% endblock %}
+{% endblock %} -->
