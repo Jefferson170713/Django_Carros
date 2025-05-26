@@ -1,0 +1,36 @@
+{% extends 'accounts/base_template.html' %}
+
+{% block title %}Login{% endblock %}
+
+<!-- {% block menu %}
+    {% include 'accounts/menu_base.html' %}
+{% endblock %} -->
+
+{% block content %}
+    <div class="formulario_login_accounts">
+        <form method="POST">
+            {% csrf_token %}
+            <h1>Login</h1>
+            <!-- <div>
+                {{ form.username.errors }}
+                <label for="id_username">Usuário:</label>
+                {{ form.username }}
+            </div>
+            <div>
+                {{ form.password.errors }}
+                <label for="id_password">Senha:</label>
+                {{ form.password }}
+            </div> -->
+            <table class="tb-user">
+                {{ login_form.as_table }}
+            </table>
+            <div class='btn-enviar'>
+                <button type="submit" value="Entrar">Entrar</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+
+<!-- {% block footer %}
+    {% include 'accounts/footer_base.html' %}
+{% endblock %} -->
