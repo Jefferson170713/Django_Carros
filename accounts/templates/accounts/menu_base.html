@@ -1,0 +1,17 @@
+
+{% block menu %}
+    <div class="menu_accounts">
+        <nav>
+            <ul class="menu-list">
+                <li><a href="{% url 'cars:cars_index' %}">Início</a></li>
+                <li><a href="{% url 'cars:new_car' %}">Cadastrar carro</a></li>
+                <li><a href="{% url 'accounts:login' %}">Login</a></li>
+                <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
+                <li><a href="{% url 'accounts:register' %}">Registrar</a></li>
+                <li><a href="#">Contato</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Ajuda</a></li>
+            </ul>
+        </nav>
+    </div>
+{% endblock %}
