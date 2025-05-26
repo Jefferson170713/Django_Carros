@@ -2,12 +2,9 @@
 
 {% block title %}Meus carros registro{% endblock %}
 
-<!-- {% block menu %}
-    {% include 'cars/menu.html' %}
-{% endblock %} -->
 
 {% block content %}
-    <div class="fomulario">
+    <div class="fomulario_register_accounts">
         <h1>Registrar</h1>
         <form action="" method="POST">
             {% csrf_token %}
@@ -30,7 +27,3 @@
         </form>
     </div>
 {% endblock %}
-
-<!-- {% block footer %}
-    {% include 'cars/footer_base.html' %}
-{% endblock %} -->
