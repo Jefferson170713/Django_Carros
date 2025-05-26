@@ -1,46 +1,96 @@
-/* Centralizar o formulário na página */
+
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Altura total da janela */
+    min-height: 100vh;
     margin: 0;
-    background-color: #f5f5f5; /* Cor de fundo opcional */
+    background-color: #f5f5f5;
     font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
 }
 
-.fomulario {
-    background-color: #ffffff; /* Fundo branco para o formulário */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar o formulário */
+.menu_accounts {
     width: 100%;
-    max-width: 400px; /* Largura máxima do formulário */
+    background: #222;
+    color: #fff;
+    padding: 0;
+    margin: 0;
 }
 
-.fomulario label {
+.menu_accounts nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.menu_accounts nav ul li {
+    display: inline-block;
+}
+
+.menu_accounts nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+}
+
+.menu_accounts nav ul li a:hover {
+    background: #444;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.fomulario_register_accounts,
+.formulario_login_accounts {
+    background-color: #fff;
+    padding: 24px 24px 16px 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: 32px 0;
+}
+
+.fomulario_register_accounts h1,
+.formulario_login_accounts h1 {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.fomulario_register_accounts label,
+.formulario_login_accounts label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-    color: #333; /* Cor do texto */
+    color: #333;
 }
 
-.fomulario input {
+.fomulario_register_accounts input,
+.formulario_login_accounts input {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 14px;
-    box-sizing: border-box; /* Garante que padding e border não aumentem a largura total */
+    box-sizing: border-box;
 }
 
-.fomulario input:focus {
-    border-color: #007bff; /* Cor da borda ao focar no campo */
-    outline: none; /* Remove o contorno padrão */
+.fomulario_register_accounts input:focus,
+.formulario_login_accounts input:focus {
+    border-color: #007bff;
+    outline: none;
 }
 
-.fomulario button {
+.fomulario_register_accounts button,
+.formulario_login_accounts button {
     width: 100%;
     padding: 10px;
     background-color: green;
@@ -52,6 +102,18 @@ body {
     transition: background-color 0.3s;
 }
 
-.fomulario button:hover {
+.fomulario_register_accounts button:hover,
+.formulario_login_accounts button:hover {
     background-color: rgb(12, 172, 12);
+}
+
+.footer_accounts {
+    width: 100%;
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 16px 0;
+    position: relative;
+    bottom: 0;
+    left: 0;
 }

@@ -9,12 +9,16 @@
 </head>
 <body>
     {% block menu %}
+        {% include 'accounts/menu_base.html' %}
     {% endblock %}
 
-    {% block content %}
-    {% endblock %}
+    <main class="main-content">
+        {% block content %}
+        {% endblock %}
+    </main>
 
     {% block footer %}
+        {% include 'accounts/footer_base.html' %}
     {% endblock %}
 </body>
 </html>
