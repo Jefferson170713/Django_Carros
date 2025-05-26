@@ -401,6 +401,85 @@
                 {{ user_form.username }}
             </div>         
         ```
+- __062 - Criando a tela de login__ - Agora vamos criar a nossa tela de login, onde o usuário irá acessar o sistema.
+    - 1° - Vamos primeiramente em *views.py*  de *accounts* e criar a view de login.
+        - 1.1 - Importamos `from django.contrib.auth.forms import AuthenticationForm` para usar o formulário de autenticação do Django.
+            - Com isso, podemos criar o formulário de login. Pois o Django já tem um formulário de autenticação pronto para uso.
+        - 1.2 - Importamos também `from django.contrib.auth import login, logout` para fazer o login e logout do usuário.
+        - 1.3 - Criamos a view de login, que irá renderizar o formulário de autenticação e processar o login do usuário.
+            ```plaintext
+                from django.shortcuts import render, redirect
+                from django.contrib.auth.forms import AuthenticationForm
+                from django.contrib.auth import login, logout
+
+                ...
+
+                def login_view(request):
+                    if request.method == 'POST':
+                        username = request.POST['username']
+                        password = request.POST['password']
+                        
+                        user = authenticate(request, username=username, password=password)
+
+                        if user is not None:
+                            login(request, user)
+                            return redirect('cars:cars_index')
+                    else:
+                        login_form = AuthenticationForm()
+                    return render( request, 'accounts/login.html', {'login_form': login_form})
+
+                ...
+
+                def logout_view(request):
+                    logout(request)
+                    return redirect('accounts:login')
+
+                ...
+
+            ```
+            - 1.4 - No código acima, verificamos se o método é *POST*, se for, pegamos o nome de usuário e a senha do formulário de autenticação.
+            - 1.5 - Usamos a função `authenticate()` para verificar se o usuário existe e se a senha está correta.
+            - 1.6 - Se o usuário for autenticado com sucesso, usamos a função `login()` para fazer o login do usuário e redirecionamos para a página de carros.
+            - 1.7 Com a função `logout_view()`, podemos fazer o logout do usuário e redirecioná-lo para a página de login.
+
+    - 2° - Agora vamos criar a rota de login e logout em *urls.py* de *accounts*.
+        - 2.1 - Importamos a view de login `from accounts.views import login_view`.
+        - 2.2 - Adicionamos a rota de login `path('login/', login_view, name='login'),`.
+        - 2.3 - Ficando assim:
+            ```plaintext
+                from django.urls import path
+                from accounts.views import register_view, login_view
+
+                app_name = 'accounts'
+
+                urlpatterns = [
+                    path('register/', register_view, name='register'),
+                    path('login/', login_view, name='login'),
+                    path('logout/', logout_view, name='logout'),
+                ]
+            ```
+    - 3° - Agora vamos criar o template de login em *accounts/templates/accounts/login.html*.
+        - 3.1 - Vamos usar o formulário de autenticação do Django, que já vem pronto para uso.
+        - 3.2 - Vamos usar o atributo *{% csrf_token %}* para dar segurança e ficando assim:
+        ```plaintext
+            {% block content %}
+                <div class="fomulario">
+                    <h1>Login</h1>
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        <div>
+                            <label for="id_username">Usuário:</label>
+                            {{ login_form.username }}
+                        </div>
+                        <div>
+                            <label for="id_password">Senha:</label>
+                            {{ login_form.password }}
+                        </div>
+                        <button type="submit">Entrar</button>
+                    </form>
+                </div>
+            {% endblock %}
+        ```
 ---
 
 ### Comandos.
